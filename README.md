@@ -4,7 +4,7 @@
 
 **现在没有完整 App。** 这页只做一件事：让人留下邮箱，内测开放时通知。
 
-预计站点：https://fbzyf.github.io/receipt-ledger-landing/
+站点：https://fbzyf.github.io/receipt-ledger-landing/
 
 ---
 
@@ -28,71 +28,36 @@
 
 这是纯静态页，不需要安装依赖。
 
-1. 打开本仓库根目录
-2. 用浏览器打开 `index.html`，或在本目录执行：
-
 ```bash
 python3 -m http.server 8080
 ```
 
 然后访问 `http://localhost:8080`。
 
-文件：
-
 | 文件 | 用途 |
 | --- | --- |
 | `index.html` | 整页结构和中文文案 |
 | `styles.css` | 手机优先样式 |
-| `main.js` | 仅处理「表单地址还是占位」时的提示 |
+| `main.js` | 邮箱校验与感谢提示 |
 | `.nojekyll` | 让 GitHub Pages 不要走 Jekyll |
 | `favicon.svg` | 小图标 |
 
 ---
 
-## 怎么换表单地址（Sam）
+## 预留收集
 
-现在表单是占位，**不会真的把邮箱发出去**。
+表单走 **FormSubmit**，POST 到 `bread@linposh.com.cn`：
 
-1. 打开 `index.html`
-2. 找到这段：
+- action: `https://formsubmit.co/bread@linposh.com.cn`
+- 字段：`email`（必填）、`scene`（可选：接单 / 代购 / 门店 / 其他）
+- 成功后回到本页 `#thanks`
 
-```html
-<form
-  id="waitlist-form"
-  class="form"
-  action="https://formspree.io/f/PLACEHOLDER"
-  method="POST"
->
-```
+首次向该邮箱提交时，FormSubmit 可能发一封确认邮件到 `bread@linposh.com.cn`，点确认后才开始转发。
 
-3. 把 `action` 换成真实地址，二选一即可：
-   - **Formspree**：`https://formspree.io/f/你的表单ID`
-   - **飞书多维表单**：飞书表单提供的提交地址
-4. 保存并推到 `main`。只要地址里不再含有 `PLACEHOLDER`，页面就会按普通 POST 提交。
-
-占位未换时：点提交会看到「提交通道待接通」，避免看起来像提交成功。
-
-字段：
-
-- `email`：必填
-- `scene`：可选，值是 `接单` / `代购` / `门店` / `其他`
-
-页上没有付款、登录，也没有自建后端。
+页上没有付款、登录，也没有自建后端。不碰恒平生产。
 
 ---
 
 ## GitHub Pages
 
-仓库设置：Source = `main` 分支根目录。
-
-打开后地址就是：
-
-`https://fbzyf.github.io/receipt-ledger-landing/`
-
----
-
-## 可能的后续改进
-
-- 接通真实表单后，可加一封确认邮件，减少假邮箱
-- 需要统计主按钮点击时，再加极简埋点（本页暂无）
-- 大改版是否另购，上线前在买断档再标一次
+Source = `main` 分支根目录 → `https://fbzyf.github.io/receipt-ledger-landing/`

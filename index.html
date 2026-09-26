@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>收款截图一本账 — 对上客户、渠道、实收</title>
+    <meta
+      name="description"
+      content="把微信/支付宝收款截图整理成「客户 × 渠道 × 实收」，月底少漏一笔。OCR 与批量导入透明买断或年订。"
+    />
+    <meta name="theme-color" content="#f4efe6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="收款截图一本账 — 对上客户、渠道、实收" />
+    <meta
+      property="og:description"
+      content="把微信/支付宝收款截图整理成「客户 × 渠道 × 实收」，月底少漏一笔。OCR 与批量导入透明买断或年订。"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="收款截图一本账 — 对上客户、渠道、实收" />
+    <meta name="twitter:description" content="截图进经营账，不是又一个个人流水记账。" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到正文</a>
+
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <p class="brand">收款截图一本账</p>
+        <a class="topbar__link" href="#signup">留邮箱</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">截图进经营账，不是又一个个人流水记账。</p>
+            <h1 id="hero-title">收款截图，整理成「客户 × 渠道 × 实收」——月底对得上。</h1>
+            <p class="lede">
+              接单、代购、小店：付款多在微信/支付宝截图里。我们帮你落成可核销的一本账（含手续费、退款、是否到账），而不是又记成一笔对不上的个人流水。
+            </p>
+            <div class="hero__actions">
+              <a class="btn" href="#signup">留邮箱，内测开放时通知我</a>
+              <p class="btn-note">不倒垃圾邮件；有名额或上线日只发一封。</p>
+              <a class="text-link" href="#steps">先看看字段长什么样</a>
+            </div>
+          </div>
+
+          <aside class="receipt" aria-hidden="true">
+            <p class="receipt__label">一本账 · 示意</p>
+            <ul class="receipt__rows">
+              <li><span>客户</span><b>王店主</b></li>
+              <li><span>渠道</span><b>微信收款</b></li>
+              <li><span>实收</span><b>¥186.20</b></li>
+              <li><span>手续费</span><b>¥1.80</b></li>
+              <li><span>退款</span><b>无</b></li>
+              <li><span>是否到账</span><b>已到账</b></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="who-title">
+        <div class="wrap">
+          <h2 id="who-title" class="visually-hidden">谁用／不解决什么</h2>
+          <div class="split">
+            <article class="card card--ok">
+              <h3>适合谁</h3>
+              <ul>
+                <li>个人或超小团队：接单、微商/代购、闲鱼/私域收款、单店多渠道日结</li>
+                <li>已在用截图记账或 Excel，却仍觉得「入账了，但对不了客户和渠道」</li>
+              </ul>
+            </article>
+            <article class="card card--bound">
+              <h3>不解决什么（诚实边界）</h3>
+              <ul>
+                <li>不做企业 ERP、代账报税、进销存/库存</li>
+                <li>不做自动爬取微信、不替代银行对公系统</li>
+                <li>不是「更全能的个人消费记账」——消费流水分类请继续用现有工具</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gap" aria-labelledby="gap-title">
+        <div class="wrap narrow">
+          <p class="kicker">竞品缺口</p>
+          <h2 id="gap-title">我们只做窄切口</h2>
+          <p class="gap-copy">
+            一木、钱迹等擅长把截图变成<strong>个人流水 + 再改分类</strong>；缺的是落到<strong>客户 × 渠道 × 实收</strong>，并和平台结算/导出流水做<strong>轻量核销</strong>。我们只做这一窄切口。
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="steps" aria-labelledby="steps-title">
+        <div class="wrap">
+          <p class="kicker">三步示意</p>
+          <h2 id="steps-title">截图上传 → 客户×渠道×实收 → 与导出流水勾对</h2>
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num">1</span>
+              <h3>截图上传</h3>
+              <p>微信 / 支付宝收款截图进账。</p>
+            </li>
+            <li class="step">
+              <span class="step__num">2</span>
+              <h3>客户×渠道×实收</h3>
+              <p>落到可核销字段：客户、渠道、实收，以及手续费、退款、是否到账。</p>
+            </li>
+            <li class="step">
+              <span class="step__num">3</span>
+              <h3>与导出流水勾对</h3>
+              <p>和平台结算 / 导出流水做轻量核销。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="pricing" aria-labelledby="price-title">
+        <div class="wrap">
+          <p class="kicker">透明价</p>
+          <h2 id="price-title">试用免费 / 买断¥98 / 年订¥48</h2>
+          <div class="pricing">
+            <article class="price-card">
+              <h3>试用</h3>
+              <p class="price">免费</p>
+              <dl>
+                <div>
+                  <dt>含</dt>
+                  <dd>手动录入 + 少量 OCR 试用（建议 5 次/账号，上线前可调）</dd>
+                </div>
+                <div>
+                  <dt>不含</dt>
+                  <dd>批量导入、无限 OCR</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="price-card price-card--focus">
+              <h3>买断</h3>
+              <p class="price">¥98</p>
+              <dl>
+                <div>
+                  <dt>含</dt>
+                  <dd>终身解锁 OCR + 批量导入（本产品当前版本；大改版是否另购上线前再标）</dd>
+                </div>
+                <div>
+                  <dt>不含</dt>
+                  <dd>代账/开票/多组织</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="price-card">
+              <h3>年订</h3>
+              <p class="price">¥48<span>/年</span></p>
+              <p class="price-sub">约 ¥4/月</p>
+              <dl>
+                <div>
+                  <dt>含</dt>
+                  <dd>同年内无限 OCR + 批量导入</dd>
+                </div>
+                <div>
+                  <dt>不含</dt>
+                  <dd>同上</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+          <p class="price-note">
+            价格透明：付费只为解锁 OCR 与批量导入；免费可先试用。无暗扣、无强制连续包月（年订到期前会提醒）。
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--cta" id="signup" aria-labelledby="cta-title">
+        <div class="wrap narrow">
+          <h2 id="cta-title">留邮箱，内测开放时通知我</h2>
+          <p class="btn-note">不倒垃圾邮件；有名额或上线日只发一封。</p>
+
+          <!--
+            Sam：把 form action 换成飞书多维表单或真实 Formspree endpoint。
+            当前为 PLACEHOLDER；提交时页面会提示「提交通道待接通」，避免静默失败。
+          -->
+          <form
+            id="waitlist-form"
+            class="form"
+            action="https://formspree.io/f/PLACEHOLDER"
+            method="POST"
+          >
+            <label class="field">
+              <span>邮箱（必填）</span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                placeholder="you@example.com"
+              />
+            </label>
+
+            <fieldset class="field field--scene">
+              <legend>你主要收款场景（可选）</legend>
+              <div class="scenes">
+                <label class="chip"><input type="radio" name="scene" value="接单" /> 接单</label>
+                <label class="chip"><input type="radio" name="scene" value="代购" /> 代购</label>
+                <label class="chip"><input type="radio" name="scene" value="门店" /> 门店</label>
+                <label class="chip"><input type="radio" name="scene" value="其他" /> 其他</label>
+              </div>
+            </fieldset>
+
+            <button class="btn" type="submit">留邮箱，内测开放时通知我</button>
+            <p id="form-status" class="form-status" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>个人台账助手 · 非税务申报工具 · 联系邮箱（可用同一预留邮箱接收）</p>
+      </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>

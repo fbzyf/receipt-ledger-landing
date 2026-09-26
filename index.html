@@ -178,17 +178,17 @@
           <h2 id="cta-title">留邮箱，内测开放时通知我</h2>
           <p class="btn-note">不倒垃圾邮件；有名额或上线日只发一封。</p>
 
-          <!--
-            Sam：把 form action 换成飞书多维表单或真实 Formspree endpoint。
-            当前为 PLACEHOLDER；提交时页面会提示「提交通道待接通」，避免静默失败。
-          -->
           <form
             id="waitlist-form"
             class="form"
-            action="https://formspree.io/f/PLACEHOLDER"
+            action="https://formsubmit.co/bread@linposh.com.cn"
             method="POST"
             novalidate
           >
+            <input type="hidden" name="_subject" value="收款截图一本账-预留" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://fbzyf.github.io/receipt-ledger-landing/#thanks" />
             <label class="field">
               <span>邮箱（必填）</span>
               <input
@@ -213,6 +213,7 @@
             </fieldset>
 
             <button class="btn" type="submit">留邮箱，内测开放时通知我</button>
+            <p id="thanks"></p>
             <p id="form-status" class="form-status" role="status" hidden></p>
           </form>
         </div>

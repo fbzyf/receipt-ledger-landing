@@ -2,8 +2,12 @@
   var thanks = document.getElementById("thanks");
   if (!thanks) return;
 
-  if (location.hash === "#thanks") {
+  function showIfThanks() {
+    if (location.hash !== "#thanks") return;
     thanks.hidden = false;
     thanks.focus();
   }
+
+  showIfThanks();
+  window.addEventListener("hashchange", showIfThanks);
 })();

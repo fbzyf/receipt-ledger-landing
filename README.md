@@ -50,7 +50,10 @@ python3 -m http.server 8080
 
 - action: `https://formsubmit.co/bread@linposh.com.cn`
 - 字段：`email`（必填）、`scene`（可选：接单 / 代购 / 门店 / 其他）
-- 成功后回到本页 `#thanks`
+- 成功后回到本页 `#thanks`，页上显示「已收到，内测开放时会发邮件通知你。」
+- 没填或填错邮箱：页上显示「请填写有效邮箱」，不会跳走
+
+要换收集地址：改 `index.html` 里 `#waitlist-form` 的 `action`（以及 `_next` 回跳地址）。
 
 首次向该邮箱提交时，FormSubmit 可能发一封确认邮件到 `bread@linposh.com.cn`，点确认后才开始转发。
 

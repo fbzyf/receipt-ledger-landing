@@ -19,6 +19,11 @@
     return email.value.trim() !== "" && email.checkValidity();
   }
 
+  // FormSubmit 成功后会跳回 #thanks
+  if (location.hash === "#thanks") {
+    showStatus("已收到，内测开放时会发邮件通知你。");
+  }
+
   form.addEventListener("submit", function (event) {
     if (!emailLooksValid()) {
       event.preventDefault();
@@ -29,7 +34,7 @@
 
     if (actionLooksPlaceholder(form.getAttribute("action") || "")) {
       event.preventDefault();
-      showStatus("提交通道待接通。把表单地址换成飞书多维表单或 Formspree 后即可提交。");
+      showStatus("提交通道待接通。");
     }
   });
 })();

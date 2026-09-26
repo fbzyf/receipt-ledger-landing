@@ -65,4 +65,7 @@ python3 -m http.server 8080
 
 ## GitHub Pages
 
-Source = `main` 分支根目录；自定义域 `receipt.jialingzhu.com`（CNAME 文件在仓库根）。备用：`https://fbzyf.github.io/receipt-ledger-landing/`
+Source = `main` 分支根目录。自定义域名 `receipt.jialingzhu.com`（仓库根目录 `CNAME`），并开启 Enforce HTTPS。
+
+- 正式站：https://receipt.jialingzhu.com/
+- 旧 GitHub.io 地址仍可能跳转：https://fbzyf.github.io/receipt-ledger-landing/

@@ -46,11 +46,14 @@ python3 -m http.server 8080
 
 ## 预留收集
 
-表单走 **FormSubmit**，POST 到 `bread@linposh.com.cn`：
+首屏和页尾各有一份相同表单，都走 **FormSubmit**，POST 到 `bread@linposh.com.cn`：
 
-- action: `https://formsubmit.co/bread@linposh.com.cn`
-- 字段：`email`（必填）、`scene`（可选：接单 / 代购 / 门店 / 其他）
-- 成功后回到本页 `#thanks`
+- `action`: `https://formsubmit.co/bread@linposh.com.cn`
+- 隐藏字段：`_subject` / `_captcha=false` / `_template=table` / `_next`
+- 字段：`email`（必填，占位「你的邮箱」）、`scene`（下拉可选：接单 / 代购 / 门店 / 其他）
+- 成功后回到 `https://fbzyf.github.io/receipt-ledger-landing/#thanks`，页顶显示「已收到。内测开放时通知你；有名额或上线日只发一封。」
+
+要换收集地址：改 `index.html` 里两份 `<form>` 的 `action` 和 `_next`（不要再用 PLACEHOLDER）。
 
 首次向该邮箱提交时，FormSubmit 可能发一封确认邮件到 `bread@linposh.com.cn`，点确认后才开始转发。
 

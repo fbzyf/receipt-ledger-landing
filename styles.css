@@ -202,7 +202,7 @@ ol {
 .topbar__link:focus-visible,
 .text-link:focus-visible,
 input:focus-visible,
-.chip:focus-within {
+select:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
@@ -392,22 +392,22 @@ input:focus-visible,
 }
 
 .form {
+  margin-top: 8px;
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.section--cta .form {
   margin-top: 22px;
-  display: grid;
-  gap: 16px;
 }
 
-.field {
-  display: grid;
-  gap: 8px;
+.form--hero {
+  max-width: 420px;
 }
 
-.field span,
-.field legend {
-  font-weight: 650;
-}
-
-.field input[type="email"] {
+.form input[type="email"],
+.form select {
   width: 100%;
   min-height: 48px;
   padding: 10px 12px;
@@ -415,43 +415,38 @@ input:focus-visible,
   border-radius: 10px;
   background: var(--card);
   font: inherit;
+  color: var(--ink);
 }
 
-.field--scene {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.scenes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
+.form button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-height: 42px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--card);
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--stamp);
+  color: var(--stamp-ink);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
 }
 
-.chip input {
-  accent-color: var(--stamp);
+.form button:hover,
+.form button:focus-visible {
+  filter: brightness(0.95);
 }
 
-.form-status {
-  padding: 12px 14px;
-  border-radius: 10px;
-  background: #fff3d6;
-  color: #5a4300;
+.thanks-banner {
+  background: var(--ok-bg);
+  color: var(--ok);
+  padding: 14px 0;
+  border-bottom: 1px solid #c9d8cc;
 }
 
-.form-status[hidden] {
+.thanks-banner[hidden] {
   display: none;
 }
 

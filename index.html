@@ -32,6 +32,10 @@
     </header>
 
     <main id="main">
+      <div id="thanks" class="thanks-banner" hidden tabindex="-1">
+        <p class="wrap">已收到。内测开放时通知你；有名额或上线日只发一封。</p>
+      </div>
+
       <section class="hero" aria-labelledby="hero-title">
         <div class="wrap hero__grid">
           <div class="hero__copy">
@@ -41,7 +45,21 @@
               接单、代购、小店：付款多在微信/支付宝截图里。我们帮你落成可核销的一本账（含手续费、退款、是否到账），而不是又记成一笔对不上的个人流水。
             </p>
             <div class="hero__actions">
-              <a class="btn" href="#signup">留邮箱，内测开放时通知我</a>
+              <form class="form form--hero" action="https://formsubmit.co/bread@linposh.com.cn" method="POST">
+                <input type="hidden" name="_subject" value="收款截图一本账-预留">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://fbzyf.github.io/receipt-ledger-landing/#thanks">
+                <input type="email" name="email" required placeholder="你的邮箱">
+                <select name="scene">
+                  <option value="">主要收款场景（可选）</option>
+                  <option value="接单">接单</option>
+                  <option value="代购">代购</option>
+                  <option value="门店">门店</option>
+                  <option value="其他">其他</option>
+                </select>
+                <button type="submit">留邮箱，内测开放时通知我</button>
+              </form>
               <p class="btn-note">不倒垃圾邮件；有名额或上线日只发一封。</p>
               <a class="text-link" href="#steps">先看看字段长什么样</a>
             </div>
@@ -178,43 +196,20 @@
           <h2 id="cta-title">留邮箱，内测开放时通知我</h2>
           <p class="btn-note">不倒垃圾邮件；有名额或上线日只发一封。</p>
 
-          <form
-            id="waitlist-form"
-            class="form"
-            action="https://formsubmit.co/bread@linposh.com.cn"
-            method="POST"
-            novalidate
-          >
-            <input type="hidden" name="_subject" value="收款截图一本账-预留" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://fbzyf.github.io/receipt-ledger-landing/#thanks" />
-            <label class="field">
-              <span>邮箱（必填）</span>
-              <input
-                type="email"
-                name="email"
-                autocomplete="email"
-                inputmode="email"
-                required
-                placeholder="you@example.com"
-                title="请填写有效邮箱"
-              />
-            </label>
-
-            <fieldset class="field field--scene">
-              <legend>你主要收款场景（可选）</legend>
-              <div class="scenes">
-                <label class="chip"><input type="radio" name="scene" value="接单" /> 接单</label>
-                <label class="chip"><input type="radio" name="scene" value="代购" /> 代购</label>
-                <label class="chip"><input type="radio" name="scene" value="门店" /> 门店</label>
-                <label class="chip"><input type="radio" name="scene" value="其他" /> 其他</label>
-              </div>
-            </fieldset>
-
-            <button class="btn" type="submit">留邮箱，内测开放时通知我</button>
-            <p id="thanks"></p>
-            <p id="form-status" class="form-status" role="status" hidden></p>
+          <form class="form" action="https://formsubmit.co/bread@linposh.com.cn" method="POST">
+            <input type="hidden" name="_subject" value="收款截图一本账-预留">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://fbzyf.github.io/receipt-ledger-landing/#thanks">
+            <input type="email" name="email" required placeholder="你的邮箱">
+            <select name="scene">
+              <option value="">主要收款场景（可选）</option>
+              <option value="接单">接单</option>
+              <option value="代购">代购</option>
+              <option value="门店">门店</option>
+              <option value="其他">其他</option>
+            </select>
+            <button type="submit">留邮箱，内测开放时通知我</button>
           </form>
         </div>
       </section>

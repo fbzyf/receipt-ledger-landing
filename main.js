@@ -1,30 +1,35 @@
 (function () {
   var form = document.getElementById("waitlist-form");
   var status = document.getElementById("form-status");
-  if (!form) return;
+  var email = form && form.querySelector('input[type="email"]');
+  if (!form || !email) return;
 
   function actionLooksPlaceholder(action) {
     return /PLACEHOLDER/i.test(action || "");
   }
 
-  var email = form.querySelector('input[type="email"]');
-  if (email) {
-    email.addEventListener("invalid", function () {
-      email.setCustomValidity("请填写有效邮箱");
-    });
-    email.addEventListener("input", function () {
-      email.setCustomValidity("");
-    });
+  function showStatus(message) {
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = message;
+    status.scrollIntoView({ block: "nearest" });
+  }
+
+  function emailLooksValid() {
+    return email.value.trim() !== "" && email.checkValidity();
   }
 
   form.addEventListener("submit", function (event) {
-    var action = form.getAttribute("action") || "";
-    if (!actionLooksPlaceholder(action)) return;
+    if (!emailLooksValid()) {
+      event.preventDefault();
+      showStatus("请填写有效邮箱");
+      email.focus();
+      return;
+    }
 
-    event.preventDefault();
-    if (!status) return;
-    status.hidden = false;
-    status.textContent = "提交通道待接通。把表单地址换成飞书多维表单或 Formspree 后即可提交。";
-    status.scrollIntoView({ block: "nearest" });
+    if (actionLooksPlaceholder(form.getAttribute("action") || "")) {
+      event.preventDefault();
+      showStatus("提交通道待接通。把表单地址换成飞书多维表单或 Formspree 后即可提交。");
+    }
   });
 })();

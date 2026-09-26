@@ -4,7 +4,9 @@
 
 **现在没有完整 App。** 这页只做一件事：让人留下邮箱，内测开放时通知。
 
-站点：https://fbzyf.github.io/receipt-ledger-landing/
+站点：https://receipt.jialingzhu.com/
+
+（GitHub Pages 默认地址仍可用：https://fbzyf.github.io/receipt-ledger-landing/；正式对外用自定义域。）
 
 ---
 
@@ -51,7 +53,7 @@ python3 -m http.server 8080
 - `action`: `https://formsubmit.co/yufengfbao@gmail.com`
 - 隐藏字段：`_subject` / `_captcha=false` / `_template=table` / `_next`
 - 字段：`email`（必填，占位「你的邮箱」）、`scene`（下拉可选：接单 / 代购 / 门店 / 其他）
-- 成功后回到 `https://fbzyf.github.io/receipt-ledger-landing/#thanks`，页顶显示「已收到。内测开放时通知你；有名额或上线日只发一封。」
+- 成功后回到 `https://receipt.jialingzhu.com/#thanks`，页顶显示「已收到。内测开放时通知你；有名额或上线日只发一封。」
 
 要换收集地址：改 `index.html` 里两份 `<form>` 的 `action` 和 `_next`（不要再用 PLACEHOLDER）。
 
@@ -63,4 +65,4 @@ python3 -m http.server 8080
 
 ## GitHub Pages
 
-Source = `main` 分支根目录 → `https://fbzyf.github.io/receipt-ledger-landing/`
+Source = `main` 分支根目录；自定义域 `receipt.jialingzhu.com`（CNAME 文件在仓库根）。备用：`https://fbzyf.github.io/receipt-ledger-landing/`
